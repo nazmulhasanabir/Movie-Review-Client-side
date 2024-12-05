@@ -1,6 +1,6 @@
 import image1 from "../src/assets/Poster image/125b8d97e03823163e879432d07ad395.jpg";
 import image2 from "../src/assets/Poster image/23ff07b3be01046c20fdced300040d9b.jpg";
-import image3 from "../src/assets/Poster image/5ffe79003530da912a82acac80be1426.jpg";
+import image3 from "../src/assets/Poster image/The Dark Knight.jpg";
 import image4 from "../src/assets/Poster image/664fb36db5d95bb35a826328038d98c8.jpg";
 import image5 from "../src/assets/Poster image/8cd9f2bdece7ada794937fd9cd960c6a.jpg";
 import image6 from "../src/assets/Poster image/e85a31925858acec5fc35708433501e5.jpg";

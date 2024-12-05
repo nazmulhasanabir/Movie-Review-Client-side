@@ -1,9 +1,12 @@
+import { Link, NavLink } from "react-router-dom";
+
 const Navbar = () => {
   const link = (
     <>
-      <li className="btn mx-2">Home</li>
-      <li className="btn mx-2">All Movies</li>
-      <li className="btn mx-2">About</li>
+      <NavLink to={'/'}><li className="btn mx-2">Home</li></NavLink>
+    <Link to={'/allMovie'}>  <li  className="btn mx-2">All Movies</li></Link>
+      <Link to={'/addedMovie'}><li className="btn mx-2">Add Movies</li></Link>
+      <Link to={'/about'}><li className="btn mx-2">About</li></Link>
     </>
   );
   return (

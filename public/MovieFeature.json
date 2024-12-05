@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "movie_title": "Inception",
+      "genre": ["Sci-Fi", "Thriller"],
+      "duration": 148,
+      "release_year": 2010,
+      "rating": 8.8,
+      "movie_poster": "https://i.ibb.co.com/KqS3G56/Inception.jpg"
+    },
+    {
+      "id": 2,
+      "movie_title": "The Dark Knight",
+      "genre": ["Action", "Drama"],
+      "duration": 152,
+      "release_year": 2008,
+      "rating": 9.0,
+      "movie_poster": "https://i.ibb.co.com/1mv9LFt/5ffe79003530da912a82acac80be1426.jpg"
+    },
+    {
+      "id": 3,
+      "movie_title": "Parasite",
+      "genre": ["Thriller", "Drama"],
+      "duration": 132,
+      "release_year": 2019,
+      "rating": 8.6,
+      "movie_poster": "https://i.ibb.co.com/vvtLjjk/Parasite.jpg"
+    },
+    {
+      "id": 4,
+      "movie_title": "Avengers Endgame",
+      "genre": ["Action", "Sci-Fi"],
+      "duration": 181,
+      "release_year": 2019,
+      "rating": 8.4,
+      "movie_poster": "https://i.ibb.co.com/3kpT1sR/Avengers-Endgame.jpg"
+    },
+    {
+      "id": 5,
+      "movie_title": "The Godfather",
+      "genre": ["Crime", "Drama"],
+      "duration": 175,
+      "release_year": 1972,
+      "rating": 9.2,
+      "movie_poster": "https://i.ibb.co.com/CJPZ5gQ/The-Godfather.jpg"
+    },
+    {
+      "id": 6,
+      "movie_title": "Interstellar",
+      "genre": ["Adventure", "Drama", "Sci-Fi"],
+      "duration": 169,
+      "release_year": 2014,
+      "rating": 8.6,
+      "movie_poster": "https://i.ibb.co.com/hFdsZC7/Interstellar.jpg"
+    }
+  ]
+  
