@@ -8,6 +8,7 @@ import Home from "./Components/Home";
 import AddMovie from "./Components/Private route/AddMovie";
 import AllMovie from "./Components/AllMovie";
 import About from "./Components/About";
+import Details from "./Components/Details";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
     element: <Home></Home>,
     loader: () => fetch("http://localhost:5000/addedMovie"),
     
+  },
+  {
+    path:"/addedMovie/:id",
+    element:<Details></Details>,
+    loader: ({params}) => fetch(`http://localhost:5000/addedMovie/${params.id}`),
   },
   {
     path: "/allMovie",
@@ -27,8 +33,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    element:<About></About>
-  }
+    element: <About></About>,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

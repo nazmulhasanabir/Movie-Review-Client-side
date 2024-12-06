@@ -3,10 +3,19 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const link = (
     <>
-      <NavLink to={'/'}><li className="btn mx-2">Home</li></NavLink>
-    <Link to={'/allMovie'}>  <li  className="btn mx-2">All Movies</li></Link>
-      <Link to={'/addedMovie'}><li className="btn mx-2">Add Movies</li></Link>
-      <Link to={'/about'}><li className="btn mx-2">About</li></Link>
+      <NavLink to={"/"}>
+        <li className="btn mx-2">Home</li>
+      </NavLink>
+      <Link to={"/allMovie"}>
+        {" "}
+        <li className="btn mx-2">All Movies</li>
+      </Link>
+      <Link to={"/addedMovie"}>
+        <li className="btn mx-2">Add Movies</li>
+      </Link>
+      <Link to={"/about"}>
+        <li className="btn mx-2">About</li>
+      </Link>
     </>
   );
   return (
@@ -37,14 +46,20 @@ const Navbar = () => {
               {link}
             </ul>
           </div>
-        <div className="flex items-center">
-          <img className="w-12" src="https://img.icons8.com/?size=100&id=UGXkf293eF7t&format=png&color=FFFFFF" />
-        <a className="btn btn-ghost text-xl">MovieNest</a>
-        </div>
+          <div className="flex items-center">
+            <img
+              className="w-12"
+              src="https://img.icons8.com/?size=100&id=UGXkf293eF7t&format=png&color=FFFFFF"
+            />
+            <a className="btn btn-ghost text-xl">MovieNest</a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
+        {/* dark theme */}
+        
+        {/* login section */}
         <div className="navbar-end">
           <a className="btn">Login</a>
         </div>
