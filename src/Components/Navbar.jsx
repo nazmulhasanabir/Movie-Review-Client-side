@@ -11,7 +11,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-gradient-to-br from-purple-900 via-black to-black text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,7 +37,10 @@ const Navbar = () => {
               {link}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">MovieNest</a>
+        <div className="flex items-center">
+          <img className="w-12" src="https://img.icons8.com/?size=100&id=UGXkf293eF7t&format=png&color=FFFFFF" />
+        <a className="btn btn-ghost text-xl">MovieNest</a>
+        </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{link}</ul>
