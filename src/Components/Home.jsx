@@ -4,7 +4,9 @@ import { Link, useLoaderData } from "react-router-dom";
 import Cart from "./Carts/Cart";
 import Slider from "../Slider";
 import Footer from "./Footer";
-
+import ExtraOne from "../ExtraOne";
+import Marquee from "react-fast-marquee";
+import MarqueeDetails from "./Marquee/MarqueeDetails";
 const Home = () => {
   const movies = useLoaderData();
   const sortMovie = [...movies].sort((a, b) => b.rating - a.rating).slice(0, 6);
@@ -12,6 +14,11 @@ const Home = () => {
     <div className="bg-gradient-to-br from-purple-900 via-black to-black min-h-screen text-white">
       <Navbar></Navbar>
       <Slider></Slider>
+      <div>
+      <Marquee>
+        <MarqueeDetails></MarqueeDetails>
+      </Marquee>
+    </div>
       <div className="w-10/12 mx-auto">
         <div className="flex justify-between">
           <h2 className="text-lg font-semibold">Popular Movies</h2>
@@ -25,7 +32,9 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="w-1/12 mx-auto"></div>
+      <div className="w-6/12 mx-auto">
+          <ExtraOne></ExtraOne>
+      </div>
       <Footer></Footer>
     </div>
   );

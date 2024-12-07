@@ -33,7 +33,7 @@ const AddMovie = () => {
       return false;
       }
       if(!form.genre){
-        Swal.fire("Error", "Title must be at least 2 characters", "error")
+        Swal.fire("Error", "Confirm the Genre option", "error")
       return false
       }
       if(!form.duration || isNaN(form.duration)  || form.duration <= 60 ){
