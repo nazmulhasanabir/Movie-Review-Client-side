@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import RatingReview from "../Private route/Rating";
 
 const Cart = ({ movie = {} }) => {
   const convertMinutes = (minute) => {
@@ -25,7 +26,7 @@ const Cart = ({ movie = {} }) => {
               />
               <p className="">{convertMinutes(duration)}</p>
             </div>
-            <p className="">{rating}</p>
+            <p className="w-full"> <RatingReview rating={rating}></RatingReview> </p>
             <p className="">{genre}</p>
             <Link to={`/addedMovie/${_id}`}><button className="btn btn-primary">See Details</button></Link>
           </div>

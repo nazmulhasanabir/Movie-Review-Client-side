@@ -30,6 +30,7 @@ const router = createBrowserRouter([
   {
     path: "/addedMovie",
     element: <AddMovie></AddMovie>,
+    
   },
   {
     path: "/about",

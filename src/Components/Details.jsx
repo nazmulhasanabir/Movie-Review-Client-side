@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import Navbar from "./Navbar";
-import {  useLoaderData } from "react-router-dom";
+import {  Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 
 const Details = () => {
@@ -68,6 +68,9 @@ const Details = () => {
         ))
       }
       </div>
+     <div className="text-center">
+     <Link to={'/allMovie'}><button>All Movie</button></Link>
+     </div>
     </div>
   );
 };

@@ -140,6 +140,29 @@ const AddMovie = () => {
                 <option value="2024">2024</option>
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
+                <option value="2022">2022</option>
+                <option value="2022">2021</option>
+                <option value="2022">2020</option>
+                <option value="2022">2019</option>
+                <option value="2022">2018</option>
+                <option value="2022">2017</option>
+                <option value="2022">2016</option>
+                <option value="2022">2015</option>
+                <option value="2022">2014</option>
+                <option value="2022">2013</option>
+                <option value="2022">2012</option>
+                <option value="2022">2011</option>
+                <option value="2022">2010</option>
+                <option value="2022">2009</option>
+                <option value="2022">2008</option>
+                <option value="2022">2007</option>
+                <option value="2022">2006</option>
+                <option value="2022">2005</option>
+                <option value="2022">2004</option>
+                <option value="2022">2003</option>
+                <option value="2022">2002</option>
+                <option value="2022">2001</option>
+                <option value="2022">2000</option>
               </select>
             </label>
           </div>
@@ -165,6 +188,9 @@ const AddMovie = () => {
               >
                 <option value="">Select</option>
                 <option value="horror">Horror</option>
+                <option value="horror">Romance</option>
+                <option value="horror">Thriller</option>
+                <option value="horror">Western</option>
                 <option value="comedy">Comedy</option>
                 <option value="drama">Drama</option>
                 <option value="action">Action</option>
@@ -201,11 +227,6 @@ const AddMovie = () => {
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
                 <require />
               </select>
             </label>

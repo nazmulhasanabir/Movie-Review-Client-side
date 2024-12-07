@@ -3,8 +3,9 @@ import Navbar from "./Navbar";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllMovie = () => {
-  const movies = useLoaderData();
+  const movies = useLoaderData({});
   const { _id,posterUrl, title, release, duration, genre, rating } = movies;
+  
   return (
     <div>
       <Navbar></Navbar>
@@ -22,7 +23,7 @@ const AllMovie = () => {
                 <p className="py-6">
                   {movie.title}
                 </p>
-                <Link to={"/addedMovie"}><button className="btn btn-primary">See Details</button></Link>
+                <Link to={`/addedMovie/${movie._id}`}><button className="btn btn-primary">See Details</button></Link>
               </div>
             </div>
           </div>
