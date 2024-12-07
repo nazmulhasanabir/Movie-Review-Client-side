@@ -14,6 +14,9 @@ const AddMovie = () => {
      rating:"0",
      summary: "",
   })
+
+  // release year drop down
+
     const handleChange = e => {
       const {name , value}  = e.target;
       setForm({...form, [name]: value})
@@ -144,7 +147,7 @@ const AddMovie = () => {
           <label className="input input-bordered flex items-center gap-2">
               <label>Duration(minutes):</label>
               <input
-                type="text"
+                type="number"
                 name="duration"
                 className="grow"
                 placeholder="Duration"
@@ -190,6 +193,7 @@ const AddMovie = () => {
               <select name="rating" placeholder={"rating"}
               onChange={handleChange}
               value={form.rating}
+              required
               >
                 <option value="">Select</option>
                 <option value="1">1</option>

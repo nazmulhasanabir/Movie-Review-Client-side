@@ -6,8 +6,8 @@ const Cart = ({ movie = {} }) => {
     const min = minute % 60;
     return `${hour} hours ${min} min`;
   };
-  const { _id,posterUrl, title, release, duration, genre, rating } = movie;
- 
+    const { _id,posterUrl, title, release, duration, genre, rating } = movie;
+  
   return (
     <div>
       <div className="hero-content flex-col lg:flex-row">
