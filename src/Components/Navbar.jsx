@@ -1,20 +1,40 @@
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { AuthContext } from "./Provider/AuthProvider";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const [dark, setDark] = React.useState(false);
+
+  const darkModeHandler = () => {
+    setDark(!dark);
+    document.body.classList.toggle("dark");
+  };
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        console.log("Logged out successfully");
+      })
+      .catch((error) => {
+        console.error("Logout error:", error.message);
+      });
+  };
   const link = (
     <>
       <NavLink to={"/"}>
         <li className="btn mx-2">Home</li>
       </NavLink>
+      <Link to={"/about"}>
+        <li className="btn mx-2">About</li>
+      </Link>
       <Link to={"/allMovie"}>
-        {" "}
         <li className="btn mx-2">All Movies</li>
       </Link>
       <Link to={"/addedMovie"}>
         <li className="btn mx-2">Add Movies</li>
       </Link>
-      <Link to={"/about"}>
-        <li className="btn mx-2">About</li>
+      <Link to={"/fvrtMovie"}>
+        <li className="btn mx-2">My Favorites</li>
       </Link>
     </>
   );
@@ -43,7 +63,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              {link}
+              {/* vvv */}
             </ul>
           </div>
           <div className="flex items-center">
@@ -54,16 +74,46 @@ const Navbar = () => {
             <a className="btn btn-ghost text-xl">MovieNest</a>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{link}</ul>
-        </div>
-        {/* dark theme */}
-        
-        {/* login section */}
-        <div className="navbar-end">
-          <a className="btn">Login</a>
-        </div>
+        {user && user?.email ? (
+          <div className="flex items-center justify-center gap-5 w-full mx-auto">
+            {link}
+            <img className="w-9 h-9 mx-2" src={user.photoUrl} alt="" />
+            <p className="text-white">{user.name}</p>
+            <button
+              onClick={handleLogout}
+              className=" bg-red-600 p-2 rounded-3xl text-white"
+            >
+              Log-out
+            </button>
+          </div>  
+        ) : (
+          <>
+            <div className="flex items-center justify-center gap-5 w-full mx-auto">
+              {" "}
+              <NavLink to={"/"}>
+                <li className="btn mx-2">Home</li>
+              </NavLink>
+              <Link to={"/about"}>
+                <li className="btn mx-2">About</li>
+              </Link>
+              <Link to={"/allMovie"}>
+                <li className="btn mx-2">All Movies</li>
+              </Link>
+            </div>
+            <div className="navbar-end">
+              <img
+                className="w-9 h-9 mx-2"
+                src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png"
+                alt=""
+              />
+              <Link to={"/signIn"}>
+                <a className="btn">Login</a>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
+      <div className="bg-yellow-100 dark:bg-blue-900"></div>
     </div>
   );
 };

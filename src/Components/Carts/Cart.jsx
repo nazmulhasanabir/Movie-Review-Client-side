@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import RatingReview from "../Private route/Rating";
+import { AuthContext } from "../Provider/AuthProvider";
+import { useContext } from "react";
 
 const Cart = ({ movie = {} }) => {
+  const { user } = useContext(AuthContext);
   const convertMinutes = (minute) => {
     const hour = Math.floor(minute / 60);
     const min = minute % 60;
     return `${hour} hours ${min} min`;
   };
-    const { _id,posterUrl, title, release, duration, genre, rating } = movie;
-  
+  const { _id, posterUrl, title, release, duration, genre, rating } = movie;
+
   return (
     <div>
       <div className="hero-content flex-col lg:flex-row">
@@ -26,9 +29,20 @@ const Cart = ({ movie = {} }) => {
               />
               <p className="">{convertMinutes(duration)}</p>
             </div>
-            <p className="w-full"> <RatingReview rating={rating}></RatingReview> </p>
+            <p className="w-full">
+              {" "}
+              <RatingReview rating={rating}></RatingReview>{" "}
+            </p>
             <p className="">{genre}</p>
-            <Link to={`/addedMovie/${_id}`}><button className="btn btn-primary">See Details</button></Link>
+            {user && user?.email ? (
+              <Link to={`/addedMovie/${_id}`}>
+                <button className="btn btn-primary">See Details</button>
+              </Link>
+            ) : (
+              <Link to={"/signIn"}>
+                <button className="btn btn-primary">See Details</button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

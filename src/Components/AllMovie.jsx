@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./Navbar";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "./Provider/AuthProvider";
 
 const AllMovie = () => {
+  const { user} = useContext(AuthContext);
   const movies = useLoaderData({});
   const { _id,posterUrl, title, release, duration, genre, rating } = movies;
   
@@ -23,7 +25,13 @@ const AllMovie = () => {
                 <p className="py-6">
                   {movie.title}
                 </p>
-                <Link to={`/addedMovie/${movie._id}`}><button className="btn btn-primary">See Details</button></Link>
+                {user && user?.email ? (
+             <Link to={`/addedMovie/${movie._id}`}><button className="btn btn-primary">See Details</button></Link>
+            ) : (
+              <Link to={"/signIn"}>
+                <button className="btn btn-primary">See Details</button>
+              </Link>
+            )}
               </div>
             </div>
           </div>

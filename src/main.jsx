@@ -9,18 +9,24 @@ import AddMovie from "./Components/Private route/AddMovie";
 import AllMovie from "./Components/AllMovie";
 import About from "./Components/About";
 import Details from "./Components/Details";
+import SignIn from "./Components/Verfication/SignIn";
+import SignUp from "./Components/Verfication/SignUp";
+import AuthProvider from "./Components/Provider/AuthProvider";
+import Navbar from "./Components/Navbar";
+import Users from "./Components/users/Users";
+import Error from "./Components/404/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
     loader: () => fetch("http://localhost:5000/addedMovie"),
-    
   },
   {
-    path:"/addedMovie/:id",
-    element:<Details></Details>,
-    loader: ({params}) => fetch(`http://localhost:5000/addedMovie/${params.id}`),
+    path: "/addedMovie/:id",
+    element: <Details></Details>,
+    loader: ({ params }) =>
+      fetch(`http://localhost:5000/addedMovie/${params.id}`),
   },
   {
     path: "/allMovie",
@@ -30,16 +36,34 @@ const router = createBrowserRouter([
   {
     path: "/addedMovie",
     element: <AddMovie></AddMovie>,
-    
+  },
+  {
+    path: "/signIn",
+    element: <SignIn></SignIn>,
+  },
+  {
+    path: "/signUp",
+    element: <SignUp></SignUp>,
   },
   {
     path: "/about",
     element: <About></About>,
   },
+  {
+    path: "users",
+    element: <Users></Users>,
+    loader: () => fetch("http://localhost:5000/users"),
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 );

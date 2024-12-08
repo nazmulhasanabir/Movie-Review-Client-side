@@ -3,7 +3,7 @@ import React from 'react';
 const MarqueeDetails = () => {
     return (
         <div>
-              <div className="bg-black text-white w-60 p-4 rounded-lg flex items-center justify-between shadow-lg">
+     <div className="bg-black text-white w-60 p-4 rounded-lg flex items-center justify-between shadow-lg">
       {/* Left Section: Image and Details */}
       <div className="flex items-start gap-4">
         {/* Movie Poster */}
