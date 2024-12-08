@@ -15,6 +15,8 @@ import AuthProvider from "./Components/Provider/AuthProvider";
 import Navbar from "./Components/Navbar";
 import Users from "./Components/users/Users";
 import Error from "./Components/404/Error";
+import PrivateRoutes from "./Components/Private route/PrivateRoute";
+import Fvrt from "./Fvrt";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/addedMovie",
-    element: <AddMovie></AddMovie>,
+    element: <PrivateRoutes> <AddMovie></AddMovie> </PrivateRoutes>,
   },
   {
     path: "/signIn",
@@ -46,9 +48,14 @@ const router = createBrowserRouter([
     element: <SignUp></SignUp>,
   },
   {
+    path: "/favourite",
+    element:<Fvrt></Fvrt>
+  },
+  {
     path: "/about",
     element: <About></About>,
   },
+
   {
     path: "users",
     element: <Users></Users>,

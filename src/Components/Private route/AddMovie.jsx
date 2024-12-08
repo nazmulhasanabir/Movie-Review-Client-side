@@ -98,11 +98,10 @@ const AddMovie = () => {
       });
   };
   return (
-    <div>
+    <div className="bg-gradient-to-br from-purple-900 via-black to-black">
       <Navbar></Navbar>
-      <h2>Add Movie</h2>
-      <form onSubmit={handleAddMovie}>
-        <div className="w-4/12 mx-auto">
+      <form  onSubmit={handleAddMovie}>
+        <div className="w-6/12 mx-auto mt-5 flex flex-col gap-4 ">
           {/* poster url */}
           <div>
             <label className="input input-bordered flex items-center gap-2">
@@ -168,7 +167,7 @@ const AddMovie = () => {
           </div>
           {/* duration */}
           <label className="input input-bordered flex items-center gap-2">
-              <label>Duration(minutes):</label>
+              <label>Duration(min):</label>
               <input
                 type="number"
                 name="duration"

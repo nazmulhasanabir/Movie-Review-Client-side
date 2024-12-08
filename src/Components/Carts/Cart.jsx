@@ -14,13 +14,13 @@ const Cart = ({ movie = {} }) => {
 
   return (
     <div>
-      <div className="hero-content flex-col lg:flex-row">
+      <div className="hero-content flex-col lg:flex-row  bg-gray-200  dark:bg-gradient-to-br from-purple-900 via-black to-black text-white">
         <div className="  ">
           <div>
             <img src={posterUrl} className="max-w-sm rounded-lg shadow-2xl" />
           </div>
           <div className="w-9/12 mx-auto text-center">
-            <h1 className="text-5xl font-bold">{title}</h1>
+            <h1 className="text-3xl font-bold">{title}</h1>
             <p className="">{release}</p>
             <div className="flex items-center gap-2 ">
               <img
@@ -29,8 +29,7 @@ const Cart = ({ movie = {} }) => {
               />
               <p className="">{convertMinutes(duration)}</p>
             </div>
-            <p className="w-full">
-              {" "}
+            <p className="">
               <RatingReview rating={rating}></RatingReview>{" "}
             </p>
             <p className="">{genre}</p>

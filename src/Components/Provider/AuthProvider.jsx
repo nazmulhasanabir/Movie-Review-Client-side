@@ -2,7 +2,8 @@ import {
   createUserWithEmailAndPassword, 
   onAuthStateChanged, 
   signInWithEmailAndPassword, 
-  signOut
+  signOut,
+  updateProfile
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../../Firebase Init/Firebase.init";
@@ -13,37 +14,43 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(true);
 
-  // Function to create a new user
+
   const createUser = (email, password) => {
     setLoader(true);
     return createUserWithEmailAndPassword(auth, email, password)
-      .finally(() => setLoader(false)); // Ensure loader is reset
+
   };
 
-  // Function to sign in an existing user
+ 
   const signInUser = (email, password) => {
     setLoader(true);
     return signInWithEmailAndPassword(auth, email, password)
-      .finally(() => setLoader(false)); // Ensure loader is reset
+     
   };
 
   const logOut = () => {
     setLoader(true);
     return signOut(auth)
       .then(() => {
-        setUser(null); // Clear user state on successful logout
+        setUser(null); 
       })
-      .finally(() => setLoader(false)); // Stop the loader
+ 
+  };
+  const UpdateUserProfile = (updateData) => {
+    console.log(updateData)
+    return updateProfile(auth.currentUser, updateData);
   };
 
-  // Watch for changes in authentication state
+
+
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser); // Set the logged-in user
-      setLoader(false); // Stop the loader
+      setUser(currentUser); 
+      setLoader(false); 
     });
 
-    // Cleanup the listener on component unmount
+   
     return () => unsubscribe();
   }, []);
 
@@ -52,7 +59,8 @@ const AuthProvider = ({ children }) => {
     loader,
     createUser,
     signInUser,
-    logOut
+    logOut,
+    updateProfile
   };
 
   return (
