@@ -119,12 +119,11 @@ const SignUp = () => {
       <Navbar />
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <h1 className="text-5xl font-bold">Sign Up now!</h1>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card  bg-[url('https://i.pinimg.com/474x/31/13/b4/3113b46876b6ad2c40289821d44e2625.jpg')] bg-cover w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleSignUp} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text font-bold ">Name</span>
                 </label>
                 <input
                   type="text"
