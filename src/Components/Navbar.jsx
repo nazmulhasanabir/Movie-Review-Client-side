@@ -185,30 +185,38 @@ const Navbar = () => {
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </label>
-          <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="" className=" m-1">
-              
-             {user && user?.email ? <img className="w-12 h-12 rounded-full" src={user.photoURL} /> :  <Link to={"/signIn"}>
+          <div className="dropdown dropdown-end ">
+            <div tabIndex={0} role="" className=" relative m-1">
+             {user && user?.email ?
+          <div className="group relative w-12 h-12">
+               <img className="w-12 h-12 rounded-full"
+              src={user.photoURL} />
+              <div className="absolute right-0 top-14 hidden w-max px-2 py-1  text-sm text-white bg-gray-800 rounded-md group-hover:block">
+                {user.displayName}
+              </div>
+          </div> 
+          :  <Link to={"/signIn"}>
               <button className="btn">Login</button>
             </Link> }
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-32 p-2 shadow"
+              className="dropdown-content menu bg-[url('https://i.pinimg.com/474x/70/76/74/707674868b11a1d4cdb92e681b37b279.jpg')] bg-cover rounded-box z-[10] w-32 p-2 shadow"
             >
              
                {user && user?.email ? (
-            <div className="flex items-center gap-3 flex-col">
+            <div className="flex items-center  flex-col">
               <img
                 className="w-9 h-9 rounded-full"
                 src={user.photoURL}
                 alt=""
               />
-              <p className="text-black  hidden lg:block">{user.displayName}</p>
+              <p className="text-white   lg:block">{user.displayName}</p>
+             
               
               <button
                 onClick={handleLogout}
-                className="dark:bg-red-600 bg-purple-400 p-1  rounded-xl text-black dark:text-white"
+                className="dark:bg-red-600 bg-purple-400 p-1  rounded-xl text-white "
               >
                 Log-out
               </button>
