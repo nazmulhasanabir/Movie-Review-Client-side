@@ -17,6 +17,7 @@ import Users from "./Components/users/Users";
 import Error from "./Components/404/Error";
 import PrivateRoutes from "./Components/Private route/PrivateRoute";
 import Fvrt from "./Fvrt";
+import Reset from "./Components/Reset";
 
 const router = createBrowserRouter([
   {
@@ -55,7 +56,10 @@ const router = createBrowserRouter([
     path: "/about",
     element: <About></About>,
   },
-
+  {
+    path:"/reset",
+    element:<Reset></Reset>
+  },
   {
     path: "users",
     element: <Users></Users>,

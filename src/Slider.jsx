@@ -16,10 +16,10 @@ import { Pagination } from "swiper/modules";
 
 const Slider = () => {
   return (
-    <div className="p-20  bg-gray-200  dark:bg-gradient-to-br from-purple-900 via-black to-black text-white">
+    <div className="p-20  bg-orange-200 rounded-xl mb-6 dark:bg-gradient-to-br from-purple-900 via-black to-black text-white">
       <Swiper
         slidesPerView={3}
-        spaceBetween={20}
+        spaceBetween={30}
         pagination={{
           clickable: true,
         }}

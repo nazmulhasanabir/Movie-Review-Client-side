@@ -14,7 +14,7 @@ const Cart = ({ movie = {} }) => {
 
   return (
     <div>
-      <div className="hero-content flex-col lg:flex-row  bg-gray-200  dark:bg-gradient-to-br from-purple-900 via-black to-black text-white">
+      <div className="hero-content flex-col lg:flex-row rounded-xl mx-2 my-2  bg-red-200  dark:bg-gradient-to-br from-purple-900 via-black to-black text-white">
         <div className="  ">
           <div>
             <img src={posterUrl} className="max-w-sm rounded-lg shadow-2xl" />

@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="bg-gradient-to-br from-purple-900 via-black to-black text-white  text-center p-20 ">
+      <div className=" bg-orange-100 text-black dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white  text-center p-20 ">
         <h2 className="text-5xl font-bold my-5">About the Developer</h2>
         <p className="font-normal text-base p-10">
           This project was crafted by <span className="font-bold">Abir</span>, a

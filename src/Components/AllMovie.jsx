@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { Link, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
+import Footer from "./Footer";
 
 const AllMovie = () => {
   const { user } = useContext(AuthContext);
@@ -18,7 +19,7 @@ useEffect(() => {
 })
   // const { _id,posterUrl, title, release, duration, genre, rating } = movies;
   return (
-    <div className="bg-gradient-to-br from-purple-900 via-black to-black">
+    <div className=" bg-orange-200  dark:bg-gradient-to-br from-purple-900 via-black to-black">
       <Navbar></Navbar>
       <p className="text-center"> {movies.length}</p>
         <div className="w-6/12 mx-auto p-3 ">
@@ -36,9 +37,9 @@ useEffect(() => {
   </svg>
 </label>
         </div>
-      <div className="grid grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid grid-cols-2 lg:grid-cols-2 w-10/12 mx-auto">
         {movies.map((movie) => (
-          <div className="herobg-gradient-to-br from-purple-900 via-black to-black text-white min-h-screen">
+          <div className=" herobg-gradient-to-br from-purple-900 via-black to-black dark:text-white min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
               <img
                 src={movie.posterUrl}
@@ -62,6 +63,7 @@ useEffect(() => {
           </div>
         ))}
       </div>
+      <Footer></Footer>
     </div>
   );
 };

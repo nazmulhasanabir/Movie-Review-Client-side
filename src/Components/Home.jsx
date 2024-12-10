@@ -29,17 +29,16 @@ const Home = () => {
       <div className=" bg-gray-200 text-black dark:bg-gradient-to-br from-purple-900 via-black to-black ">
       <Navbar></Navbar>
       <Slider></Slider>
-      <div className=" bg-gray-200  dark:bg-gradient-to-br from-purple-900 via-black to-black text-black">
+      <div className="  bg-gray-200  dark:bg-gradient-to-br from-purple-900 via-black to-black text-black">
       <Marquee>
         <MarqueeDetails></MarqueeDetails>
         <Marquee2></Marquee2>
         <Marquee3></Marquee3>
         <Marquee4></Marquee4>
         <Marquee5></Marquee5>
-
       </Marquee>
     </div>
-      <div className="w-10/12 mx-auto rounded-xl  bg-gray-200  dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white">
+      <div className="w-10/12 mx-auto rounded-xl my-4 bg-red-300 p-2  dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white">
         <div className="flex justify-between">
           <h2 className="text-lg font-semibold ">Popular Movies</h2>
           <Link to={"/allMovie"}>
@@ -52,7 +51,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="w-6/12 mx-auto bg-slate-400 rounded-lg">
+      <div className="w-6/12 mx-auto  rounded-lg">
           <ExtraOne></ExtraOne>
       </div>
       <Footer></Footer>

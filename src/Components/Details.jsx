@@ -87,9 +87,9 @@ const Details = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-purple-900 via-black to-black">
+    <div className=" bg-white  dark:bg-gradient-to-br from-purple-900 via-black to-black">
       <Navbar></Navbar>
-      <div className="w-8/12 mx-auto card bg-gradient-to-br from-purple-900 via-black to-black  shadow-xl text-white ">
+      <div className="w-8/12 text-black mx-auto card bg-white dark:bg-gradient-to-br from-purple-900 via-black to-black  shadow-xl text-white ">
         {delMov.map(
           ({
             _id,
@@ -101,9 +101,9 @@ const Details = () => {
             summary,
             rating,
           }) => (
-            <div className="bg-gradient-to-br from-purple-900 via-black to-black">
+            <div className="bg-red-300 p-2 my-6 rounded-xl dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white">
               <figure>
-                <img src={posterUrl} />
+                <img className="rounded-xl" src={posterUrl} />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">
@@ -150,7 +150,7 @@ const Details = () => {
       </div>
       <div className="text-center">
         <Link to={"/allMovie"}>
-          <button className="w-full bg-red-800 text-white rounded-3xl p-3 mt-4">All Movie</button>
+          <button className="w-4/12 bg-red-800 text-white rounded-3xl p-3 mt-4">All Movie</button>
         </Link>
       </div>
     </div>

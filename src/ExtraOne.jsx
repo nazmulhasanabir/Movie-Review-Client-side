@@ -2,7 +2,7 @@ import React from "react";
 
 const ExtraOne = () => {
   return (
-    <div className="">
+    <div className=" bg-orange-200 p-5 rounded-xl dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white">
       <h2 className="text-2xl font-bold text-center">
         Top  Hollywood actors
       </h2>
@@ -12,14 +12,14 @@ const ExtraOne = () => {
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_pblA7fqQVXQi0LcacK3DTMVcle7kDo8F-2w74OANdGqodpcy" />
           </div>
-            <h2 className="text-black">Denzel Washington</h2>
+            <h2 className="text-black dark:text-white">Denzel Washington</h2>
         </div>
         {/* SECOND */}
         <div className="avatar flex flex-col justify-center items-center ">
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQJBntbqy_AhBhpkcGci8VP79LSwcheGgaj4BEeWLy9pUK3KOy7" />
           </div>
-            <h2 className="text-black">Brad Pitt
+            <h2 className="text-black dark:text-white">Brad Pitt
             </h2>
         </div>
         {/* THIRD */}
@@ -27,48 +27,48 @@ const ExtraOne = () => {
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTKJ4ChKoODOx7tSjW1BQW83d5JXnycXZlyfDBXtc-SNM0VRLHd" />
           </div>
-            <h2 className="text-black">Robert De Niro</h2>
+            <h2 className="text-black dark:text-white">Robert De Niro</h2>
         </div>
         {/* FOURTH */}
         <div className="avatar flex flex-col justify-center items-center ">
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT7r-IhfNFzPufmJDtvzJYc2XSTyZ073CRWcyrufRheMz5XeVzy" />
           </div>
-            <h2 className="text-black">Tom Cruise</h2>
+            <h2 className="text-black dark:text-white">Tom Cruise</h2>
         </div>
         {/* FIVE */}
         <div className="avatar flex flex-col justify-center items-center ">
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQca59lIsX6cXLNmRMle2fcCkURB4AvtkSqh-4Do1NwxEW49fNW" />
           </div>
-            <h2 className="text-black">Leonardo DiCaprio</h2>
+            <h2 className="text-black dark:text-white">Leonardo DiCaprio</h2>
         </div>
         {/* SIX */}
         <div className="avatar flex flex-col justify-center items-center ">
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVmVmWfVJi7OJAa_QH25SmK-nG54D9ExShXogFCQVGQjrvlEh" />
           </div>
-            <h2 className="text-black">Robert Downey Jr.</h2>
+            <h2 className="text-black dark:text-white">Robert Downey Jr.</h2>
         </div>
         {/* SEVEN */}
         <div className="avatar flex flex-col justify-center items-center ">
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRaT2WozXdM9ChvdlD38Wp0--s6sgOqG4lbgwvrO5Ou16gUzNsE" />
           </div>
-            <h2 className="text-black">Dwayne Johnson</h2>
+            <h2 className="text-black dark:text-white">Dwayne Johnson</h2>
         </div>
         {/* EIGHT */}
         <div className="avatar flex flex-col justify-center items-center ">
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStSRa7WE4Eh_t3-91lA8N3C_IPcwhLvFKsr9m4uAxuTiL7LlqL" />
           </div>
-            <h2 className="text-black">Hugh Jackman</h2>
+            <h2 className="text-black dark:text-white">Hugh Jackman</h2>
         </div>
         <div className="avatar flex flex-col justify-center items-center ">
           <div className="ring-primary  w-24 rounded-full ">
             <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQBJ5WIGdOodM789dhGsBNLwbBWR21ppLZ1tfKp48QoBq5cfazm" />
           </div>
-            <h2 className="text-black">Joaquin Phoenix</h2>
+            <h2 className="text-black dark:text-white">Joaquin Phoenix</h2>
         </div>
       </div>
     </div>

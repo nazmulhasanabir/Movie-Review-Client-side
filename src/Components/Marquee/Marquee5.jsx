@@ -15,7 +15,7 @@ const Marquee5 = () => {
         />
         {/* Movie Details */}
         <div>
-          <h3 className="font-bold text-lg">Broad Peak</h3>
+          <h3 className="font-bold text-base">Broad Peak</h3>
           <p className="text-gray-400 text-sm">Adventure, Action</p>
         </div>
       </div>
@@ -40,3 +40,4 @@ const Marquee5 = () => {
 };
 
 export default Marquee5;
+

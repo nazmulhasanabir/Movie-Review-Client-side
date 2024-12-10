@@ -15,7 +15,7 @@ const Marquee2 = () => {
            {/* Movie Details */}
            <div>
              <h3 className="font-bold text-lg">PORTAL</h3>
-             <p className="text-gray-400 text-sm">HorroR</p>
+             <p className="text-gray-400 text-sm">Horror</p>
            </div>
          </div>
    
