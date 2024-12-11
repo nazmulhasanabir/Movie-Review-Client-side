@@ -7,14 +7,14 @@ import { AuthContext } from '../Provider/AuthProvider';
 // import { AuthContext } from "../Providers/AuthProvider";
 // import loader from "../assets/others/loader3.gif"
 const PrivateRoutes = ({ children }) => {
-    const { user, loading } = useContext(AuthContext)
+    const { user, loader } = useContext(AuthContext)
     const location = useLocation();
-    if (loading) {
+    if (loader) {
         return <span className="loading loading-ring loading-lg"></span>
     }
-    if (user) {
+    if (user && user.email) {
         return children;
     }
-    return <Navigate to="/signIn" state={{ from: location }} replace></Navigate>;
+    return <Navigate to="/auth/signIn" state={{ from: location }} replace></Navigate>;
 };
 export default PrivateRoutes;

@@ -94,7 +94,7 @@ const SignIn = () => {
                 />
                 <p className="mt-2 text-center ">
                   New here? Create an account and join us today!
-                  <Link to={"/signUp"}>
+                  <Link to={"/auth/signUp"}>
                     <button className="text-purple-900 font-semibold text-base">
                       Register
                     </button>

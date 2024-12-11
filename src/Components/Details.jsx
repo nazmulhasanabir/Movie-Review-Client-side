@@ -1,11 +1,12 @@
 import Swal from "sweetalert2";
 import Navbar from "./Navbar";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "./Provider/AuthProvider";
 
 const Details = () => {
   const loadUser = useLoaderData();
+  const navigate = useNavigate()
   const { user } = useContext(AuthContext);
   const [delMov, setDelMov] = useState(
     Array.isArray(loadUser) ? loadUser : [loadUser]
@@ -28,14 +29,15 @@ const Details = () => {
       },
       body: JSON.stringify({
         email: user.email,
-        movieId: _id,
-        duration: duration,
-        posterUrl: posterUrl,
-        rating: rating,
-        title: title,
-        release: release,
-        genre: genre,
-        summary: summary,
+        ...movie
+        // movieId: _id,
+        // duration: duration,
+        // posterUrl: posterUrl,
+        // rating: rating,
+        // title: title,
+        // release: release,
+        // genre: genre,
+        // summary: summary,
       }),
     })
       .then((res) => res.json())
@@ -46,7 +48,7 @@ const Details = () => {
             text: "Movie added to favorites!",
             icon: "success",
             confirmButtonText: "OK",
-          });
+          }).then(()=> navigate("/favourite"))
         }
       })
       .catch((error) => {
@@ -89,7 +91,7 @@ const Details = () => {
   return (
     <div className=" bg-white  dark:bg-gradient-to-br from-purple-900 via-black to-black">
       <Navbar></Navbar>
-      <div className="w-8/12 text-black mx-auto card bg-white dark:bg-gradient-to-br from-purple-900 via-black to-black  shadow-xl text-white ">
+      <div className="w-8/12 text-black mx-auto card bg-white dark:bg-gradient-to-br from-purple-900 via-black to-black  shadow-xl  ">
         {delMov.map(
           ({
             _id,
@@ -117,13 +119,13 @@ const Details = () => {
                   <h2>{summary}</h2>
                 </div>
                 <div className="card-actions justify-end">
-                  <div className="badge badge-outline">
+                  <div className="badge badge-outline bg-red-700 text-white p-4">
                     {" "}
                     <button onClick={() => handleDelete(_id)}>
                       Delete
                     </button>{" "}
                   </div>
-                  <div className="badge badge-outline">
+                  <div className="badge badge-outline bg-pink-600 text-white p-4">
                     <Link to={"/favourite"}>
                       <button
                         onClick={() =>

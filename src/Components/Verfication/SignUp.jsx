@@ -168,7 +168,9 @@ const SignUp = () => {
                   className="input input-bordered"
                   required
                 />
-                {error && <p className="text-red-500 text-base mt-2">{error}</p>}
+                {error && (
+                  <p className="text-red-500 text-base mt-2">{error}</p>
+                )}
               </div>
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary">
@@ -182,7 +184,7 @@ const SignUp = () => {
                 />
                 <p className="mt-2">
                   Already have an account?{" "}
-                  <Link to="/signIn">
+                  <Link to="/auth/signIn">
                     <span className="text-purple-900 font-semibold text-base">
                       Login
                     </span>

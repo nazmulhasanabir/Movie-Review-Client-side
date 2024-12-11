@@ -18,6 +18,7 @@ import Error from "./Components/404/Error";
 import PrivateRoutes from "./Components/Private route/PrivateRoute";
 import Fvrt from "./Fvrt";
 import Reset from "./Components/Reset";
+import Auth from "./Auth";
 
 const router = createBrowserRouter([
   {
@@ -40,15 +41,22 @@ const router = createBrowserRouter([
     path: "/addedMovie",
     element: <PrivateRoutes> <AddMovie></AddMovie> </PrivateRoutes>,
   },
-  {
-    path: "/signIn",
-    element: <SignIn></SignIn>,
+   { path: "/auth",
+    element: <Auth></Auth>,
+    children:[
+      {
+        path: "signIn",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "signUp",
+        element: <SignUp></SignUp>,
+      },
+
+    ]
   },
-  {
-    path: "/signUp",
-    element: <SignUp></SignUp>,
-  },
-  {
+    
+  ,{
     path: "/favourite",
     element:<Fvrt></Fvrt>
   },

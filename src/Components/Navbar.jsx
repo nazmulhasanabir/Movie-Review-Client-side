@@ -195,7 +195,7 @@ const Navbar = () => {
                 {user.displayName}
               </div>
           </div> 
-          :  <Link to={"/signIn"}>
+          :  <Link to={"/auth/signIn"}>
               <button className="btn">Login</button>
             </Link> }
             </div>
@@ -222,7 +222,7 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <Link to={"/signIn"}>
+            <Link to={"auth/signIn"}>
               <button className="btn">Login</button>
             </Link>
           )}
