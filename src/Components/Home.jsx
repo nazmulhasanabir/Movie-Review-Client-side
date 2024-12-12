@@ -14,10 +14,6 @@ import Marquee4 from "./Marquee/Marquee4";
 const Home = () => {
   const [dark, setDark] = React.useState(false);
 
-  const darkModeHandler = () => {
-      setDark(!dark);
-      document.body.classList.toggle("dark");
-  }
 
 
   const movies = useLoaderData();

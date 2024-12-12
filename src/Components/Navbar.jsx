@@ -38,6 +38,7 @@ const Navbar = () => {
 
   return (
     <div>
+
       <div className="navbar bg-red-300  text-black   dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white">
         <div className="navbar-start">
           <div className="dropdown">
@@ -132,6 +133,7 @@ const Navbar = () => {
             </div>
           ) : (
             <div>
+
               <Link to={"/"}>
                 <li className="btn mx-2">Home</li>
               </Link>

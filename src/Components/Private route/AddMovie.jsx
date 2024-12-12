@@ -100,7 +100,7 @@ const AddMovie = () => {
   return (
     <div className="bg-orange-100 dark:bg-gradient-to-br from-purple-900 via-black to-black p-5">
       <Navbar></Navbar>
-      <test></test>
+ 
       <form  onSubmit={handleAddMovie}>
         <div className="w-6/12 mx-auto mt-5 flex flex-col gap-4 ">
           {/* poster url */}

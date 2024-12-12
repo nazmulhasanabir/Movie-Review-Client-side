@@ -12,13 +12,13 @@ import Details from "./Components/Details";
 import SignIn from "./Components/Verfication/SignIn";
 import SignUp from "./Components/Verfication/SignUp";
 import AuthProvider from "./Components/Provider/AuthProvider";
-import Navbar from "./Components/Navbar";
 import Users from "./Components/users/Users";
-import Error from "./Components/404/Error";
 import PrivateRoutes from "./Components/Private route/PrivateRoute";
 import Fvrt from "./Fvrt";
 import Reset from "./Components/Reset";
 import Auth from "./Auth";
+import NotWork from "./Components/Verfication/NotWork/NotWork";
+import Update from "./Components/Update";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +31,14 @@ const router = createBrowserRouter([
     element:(<PrivateRoutes> <Details></Details></PrivateRoutes>),
     loader: ({ params }) =>
       fetch(`http://localhost:5000/addedMovie/${params.id}`),
+  },
+  {
+    path: "/updateMovie/:id",
+    element:<Update></Update>,  
+    loader: ({ params }) =>
+      fetch(`http://localhost:5000/addedMovie/${params.id}`)
+        .then((res) => res.json())
+        .catch((error) => console.error("Error fetching movie:", error)),
   },
   {
     path: "/allMovie",
@@ -75,7 +83,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Error></Error>,
+    element:<NotWork></NotWork>
   },
 ]);
 

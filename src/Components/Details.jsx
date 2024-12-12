@@ -91,6 +91,7 @@ const Details = () => {
   return (
     <div className=" bg-white  dark:bg-gradient-to-br from-purple-900 via-black to-black">
       <Navbar></Navbar>
+      <h2 className='text-2xl font-bold text-center mt-2'>Add Movie</h2>
       <div className="w-8/12 text-black mx-auto card bg-white dark:bg-gradient-to-br from-purple-900 via-black to-black  shadow-xl  ">
         {delMov.map(
           ({
@@ -120,10 +121,18 @@ const Details = () => {
                 </div>
                 <div className="card-actions justify-end">
                   <div className="badge badge-outline bg-red-700 text-white p-4">
-                    {" "}
+
+                    <Link to={`/updateMovie/${_id}`}>
+                    <button >
+                      Update
+                    </button>
+                    </Link>
+                  </div>
+                  <div className="badge badge-outline bg-red-700 text-white p-4">
+
                     <button onClick={() => handleDelete(_id)}>
                       Delete
-                    </button>{" "}
+                    </button>
                   </div>
                   <div className="badge badge-outline bg-pink-600 text-white p-4">
                     <Link to={"/favourite"}>
