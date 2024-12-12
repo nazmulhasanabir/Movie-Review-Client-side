@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Navbar from "../Navbar";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../Firebase Init/Firebase.init";
 import Swal from "sweetalert2";
 
@@ -30,24 +30,64 @@ const SignIn = () => {
       });
   };
 
-  const handleGoogle = () => {
+  // const handleGoogle = () => {
+  //   const provider = new GoogleAuthProvider();
+  //   signInWithPopup(auth, provider)
+  //     .then((result) => {
+  //       console.log("Google sign-in successful:", result.user);
+  //       navigate("/");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Google sign-in error:", error.message);
+  //       Swal.fire({
+  //         title: "Error!",
+  //         text: "Google sign-in failed. Please try again.",
+  //         icon: "error",
+  //         confirmButtonText: "OK",
+  //       });
+  //     });
+  // };
+  const handleGoogle = async () => {
+    const auth = getAuth();
     const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log("Google sign-in successful:", result.user);
-        navigate("/");
-      })
-      .catch((error) => {
-        console.error("Google sign-in error:", error.message);
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log("Google sign-in successful:", result.user);
+
+      const newUser = {
+        name: result.user.displayName,
+        email: result.user.email,
+        photoURL: result.user.photoURL,
+      };
+
+      // Save Google user to database
+      const response = await fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newUser),
+      });
+      const data = await response.json();
+
+      if (data.insertedId) {
         Swal.fire({
-          title: "Error!",
-          text: "Google sign-in failed. Please try again.",
-          icon: "error",
+          title: "Success!",
+          text: "Google sign-In successful!",
+          icon: "success",
           confirmButtonText: "OK",
         });
+        navigate("/");
+      }
+    } catch (err) {
+      console.error("Error during Google sign-in:", err);
+      Swal.fire({
+        title: "Error!",
+        text: "An error occurred during Google sign-in. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK",
       });
+    }
   };
-
   return (
     <div>
       <Navbar />

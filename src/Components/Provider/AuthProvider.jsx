@@ -56,12 +56,12 @@ const AuthProvider = ({ children }) => {
 
   const userInfo = {
     user,
-    
+    setUser,
     loader,
     createUser,
     signInUser,
     logOut,
-    updateProfile
+    UpdateUserProfile
   };
 
   return (

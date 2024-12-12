@@ -38,7 +38,7 @@ const Cart = ({ movie = {} }) => {
                 <button className="btn btn-primary">See Details</button>
               </Link>
             ) : (
-              <Link to={"/signIn"}>
+              <Link to={"/auth/signIn"}>
                 <button className="btn btn-primary">See Details</button>
               </Link>
             )}

@@ -4,9 +4,9 @@ import { AuthContext } from "./Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
   const [dark, setDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   const darkModeHandler = () => {
     setDark(!dark);
     document.body.classList.toggle("dark");
