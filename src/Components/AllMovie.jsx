@@ -7,20 +7,21 @@ import Footer from "./Footer";
 const AllMovie = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const movies = useLoaderData({});
-  const [search, setSearch] = useState("");
+  const movies = useLoaderData();
+  const [Mov, setMov] = useState(movies)
 
+  const [search, setSearch] = useState("");
   useEffect(() => {
     fetch(`http://localhost:5000/addedMovie?searchParams=${search}`)
       .then((res) => res.json())
       .then(
         (data) => {
-          console.log(data);
+         setMov(data)
         },
         [search]
       );
   });
-  // const { _id,posterUrl, title, release, duration, genre, rating } = movies;
+  //  const { _id,posterUrl, title, release, duration, genre, rating } = movies;
   return (
     <div className=" bg-orange-200  dark:bg-gradient-to-br from-purple-900 via-black to-black">
       <Navbar></Navbar>
@@ -47,7 +48,7 @@ const AllMovie = () => {
         </label>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-2 w-10/12 mx-auto">
-        {movies.map((movie) => (
+        {Mov.map((movie) => (
           <div className=" herobg-gradient-to-br from-purple-900 via-black to-black dark:text-white min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
               <img
