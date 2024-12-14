@@ -26,9 +26,12 @@ const Home = () => {
       <Navbar></Navbar>
       <Slider></Slider>
       <div className="  bg-gray-200  dark:bg-gradient-to-br from-purple-900 via-black to-black text-black">
+        <h2 className="text-7xl my-3 text-emerald-900 border-b-2 border-emerald-500 text-center">Upcoming Movie</h2>
       <Marquee>
         <MarqueeDetails></MarqueeDetails>
         <Marquee2></Marquee2>
+        <Marquee3></Marquee3>
+        <Marquee3></Marquee3>
         <Marquee3></Marquee3>
         <Marquee4></Marquee4>
         <Marquee5></Marquee5>

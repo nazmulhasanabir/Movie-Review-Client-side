@@ -10,7 +10,7 @@ const Cart = ({ movie = {} }) => {
     const min = minute % 60;
     return `${hour} hours ${min} min`;
   };
-  const { _id, posterUrl, title, release, duration, genre, rating } = movie;
+  const { email,_id, posterUrl, title, release, duration, genre, rating } = movie;
 
   return (
     <div>

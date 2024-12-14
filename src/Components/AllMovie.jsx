@@ -8,19 +8,23 @@ const AllMovie = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const movies = useLoaderData();
-  const [Mov, setMov] = useState(movies)
+  const [Mov, setMov] = useState(movies);
 
   const [search, setSearch] = useState("");
-  useEffect(() => {
+
+  
+    useEffect(() => {
     fetch(`http://localhost:5000/addedMovie?searchParams=${search}`)
       .then((res) => res.json())
       .then(
         (data) => {
-         setMov(data)
+          setMov(data);
         },
         [search]
       );
+  
   });
+
   //  const { _id,posterUrl, title, release, duration, genre, rating } = movies;
   return (
     <div className=" bg-orange-200  dark:bg-gradient-to-br from-purple-900 via-black to-black">

@@ -4,7 +4,7 @@ import { AuthContext } from "./Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+
   const [dark, setDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const darkModeHandler = () => {
@@ -38,7 +38,6 @@ const Navbar = () => {
 
   return (
     <div>
-
       <div className="navbar bg-red-300  text-black   dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white">
         <div className="navbar-start">
           <div className="dropdown">
@@ -80,7 +79,7 @@ const Navbar = () => {
                     <Link to={"/addedMovie"}>
                       <li className="btn mx-2">Add Movies</li>
                     </Link>
-                    <Link to={"/favourite"}>
+                    <Link to={`/favorite/${user.email}`}>
                       <li className="btn mx-2">My Favorites</li>
                     </Link>
                   </div>
@@ -121,19 +120,18 @@ const Navbar = () => {
               <Link to={"/allMovie"}>
                 <li className="btn mx-2">All Movies</li>
               </Link>
-              <Link to={"/about"}>
-                <li className="btn mx-2">About</li>
-              </Link>
               <Link to={"/addedMovie"}>
                 <li className="btn mx-2">Add Movies</li>
               </Link>
-              <Link to={"/favourite"}>
+              <Link to={`/favorite`}>
                 <li className="btn mx-2">My Favorites</li>
+              </Link>
+              <Link to={"/about"}>
+                <li className="btn mx-2">About</li>
               </Link>
             </div>
           ) : (
             <div>
-
               <Link to={"/"}>
                 <li className="btn mx-2">Home</li>
               </Link>
@@ -149,7 +147,7 @@ const Navbar = () => {
 
         {/* Dark Mode and User Options */}
         <div className="navbar-end flex items-center gap-4">
-        <label className="grid cursor-pointer place-items-center">
+          <label className="grid cursor-pointer place-items-center">
             <input
               onClick={darkModeHandler}
               type="checkbox"
@@ -158,6 +156,7 @@ const Navbar = () => {
             />
             {dark ? "Dark Mode" : "Light Mode"}
             <svg
+            // first
               className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -173,6 +172,7 @@ const Navbar = () => {
               <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
             </svg>
             <svg
+            // second
               className="stroke-base-100  fill-base-100 col-start-2 row-start-1"
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -187,47 +187,50 @@ const Navbar = () => {
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </label>
+
           <div className="dropdown dropdown-end ">
             <div tabIndex={0} role="" className=" relative m-1">
-             {user && user?.email ?
-          <div className="group relative w-12 h-12">
-               <img className="w-12 h-12 rounded-full"
-              src={user.photoURL} />
-              <div className="absolute right-0 top-14 hidden w-max px-2 py-1  text-sm text-white bg-gray-800 rounded-md group-hover:block">
-                {user.displayName}
-              </div>
-          </div> 
-          :  <Link to={"/auth/signIn"}>
-              <button className="btn">Login</button>
-            </Link> }
+              {user && user?.email ? (
+                <div className="group relative w-12 h-12">
+                  <img className="w-12 h-12 rounded-full" src={user.photoURL} />
+                  <div className="absolute right-0 top-14 hidden w-max px-2 py-1  text-sm text-white bg-gray-800 rounded-md group-hover:block">
+                    {user.displayName}
+                  </div>
+                </div>
+              ) : (
+                <Link to={"/auth/signIn"}>
+                  <button className="btn">Login</button>
+                </Link>
+              )}
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-[url('https://i.pinimg.com/474x/70/76/74/707674868b11a1d4cdb92e681b37b279.jpg')] bg-cover rounded-box z-[10] w-32 p-2 shadow"
+              className="dropdown-content menu bg-[url('https://i.pinimg.com/474x/70/76/74/707674868b11a1d4cdb92e681b37b279.jpg')] bg-cover rounded-box z-[10] w-36 p-2 shadow"
             >
-             
-               {user && user?.email ? (
-            <div className="flex items-center  flex-col">
-              <img
-                className="w-9 h-9 rounded-full"
-                src={user.photoURL}
-                alt=""
-              />
-              <p className="text-white   lg:block">{user.displayName}</p>
-             
-              
-              <button
-                onClick={handleLogout}
-                className="dark:bg-red-600 bg-purple-400 p-1  rounded-xl text-white "
-              >
-                Log-out
-              </button>
-            </div>
-          ) : (
-            <Link to={"auth/signIn"}>
-              <button className="btn">Login</button>
-            </Link>
-          )}
+              {user && user?.email ? (
+                <div className="flex items-center  flex-col">
+                  <img
+                    className="w-9 h-9 rounded-full"
+                    src={user.photoURL}
+                    alt=""
+                  />
+                 <div className="text-xs text-center">
+                 <p className="text-white   lg:block">{user.displayName}</p>
+                 <p className="text-white   lg:block">{user.email}</p>
+                 </div>
+
+                  <button
+                    onClick={handleLogout}
+                    className="dark:bg-red-600 bg-purple-400 p-1  rounded-xl text-white "
+                  >
+                    Log-out
+                  </button>
+                </div>
+              ) : (
+                <Link to={"auth/signIn"}>
+                  <button className="btn">Login</button>
+                </Link>
+              )}
             </ul>
           </div>
         </div>

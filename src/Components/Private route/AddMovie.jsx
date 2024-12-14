@@ -1,9 +1,11 @@
 import Swal from "sweetalert2";
 import Navbar from "../Navbar";
 import {  useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddMovie = () => {
+  const {user} = useContext(AuthContext)
   const navigate = useNavigate();
   const [form , setForm] = useState({
     posterUrl: "",
@@ -14,7 +16,6 @@ const AddMovie = () => {
      rating:"0",
      summary: "",
   })
-
   // release year drop down
 
     const handleChange = e => {
@@ -54,13 +55,12 @@ const AddMovie = () => {
       }
       return true
     }
-
-
-  // form submit 
-  const handleAddMovie = (event) => {
-    event.preventDefault();
-    if(!validateForm()) {
-      return
+   
+    // form submit 
+    const handleAddMovie = (event) => { 
+      event.preventDefault();
+      if(!validateForm()) {
+        return
     };
     const form = event.target;
     const posterUrl = form.posterUrl.value;
@@ -70,8 +70,9 @@ const AddMovie = () => {
     const summary = form.summary.value;
     const duration = form.duration.value;
     const rating = form.rating.value;
-    const movie = { duration,posterUrl, rating, title, release, genre, summary };
-    console.log(movie);
+    const email = user.email;
+    const movie = {email,duration,posterUrl, rating, title, release, genre, summary };
+   
     // send data to server
     fetch("http://localhost:5000/addedMovie", {
       method: "POST",
