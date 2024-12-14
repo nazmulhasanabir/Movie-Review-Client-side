@@ -24,39 +24,7 @@ const Update = () => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
-  // form validation
-//   const validateForm = () => {
-//     const url = /^(ftp|http|https):\/\/[^ "]+$/;
-//     if (!url.test(form.posterUrl)) {
-//       Swal.fire("Error", "Poster URL must be a valid link", "error");
-//       return false;
-//     }
-//     if (!form.title || form.title.length < 2) {
-//       Swal.fire("Error", "Title must be at least 2 characters", "error");
-//       return false;
-//     }
-//     if (!form.genre) {
-//       Swal.fire("Error", "Confirm the Genre option", "error");
-//       return false;
-//     }
-//     if (!form.duration || isNaN(form.duration) || form.duration <= 60) {
-//       Swal.fire("Error", "Duration must be a number greater than 60", "error");
-//       return false;
-//     }
-//     if (!form.year) {
-//       Swal.fire("Error", "Release year must be selected", "error");
-//       return false;
-//     }
-//     if (!form.rating || isNaN(form.rating)) {
-//       Swal.fire("Error", "Rating must be selected", "error");
-//       return false;
-//     }
-//     if (!form.summary || form.summary.length < 10) {
-//       Swal.fire("Error", "Summary must be at least 10 characters", "error");
-//       return false;
-//     }
-//     return true;
-//   };
+ 
 
   // form submit
   const handleUpdateAddMovie = (event) => {
@@ -81,7 +49,7 @@ const Update = () => {
       genre,
       summary,
     };
-    console.log(movie);
+    
     // send data to server
     fetch(`http://localhost:5000/updateMovie/${_id}`, {
       method: "PUT",
@@ -109,9 +77,9 @@ const Update = () => {
   };
   return (
     <div>
-      <div className="bg-orange-100 dark:bg-gradient-to-br from-purple-900 via-black to-black p-5">
+      <div className="bg-gradient-to-br from-purple-900 via-black to-black  text-black  dark:bg-gradient-to-br dark:from-purple-300 dark:via-gray-100 dark:to-white dark:text-black p-5">
         <Navbar></Navbar>
-        <h2 className="text-2xl font-bold text-center mt-2">
+        <h2 className="text-2xl text-white dark:text-black font-bold text-center mt-2">
           Update Movie ({title})
         </h2>
         <form onSubmit={handleUpdateAddMovie}>
@@ -211,13 +179,13 @@ const Update = () => {
                 //   value={form.genre}
                 >
                   <option value="">Select</option>
-                  <option value="horror">Horror</option>
-                  <option value="horror">Romance</option>
-                  <option value="horror">Thriller</option>
-                  <option value="horror">Western</option>
-                  <option value="comedy">Comedy</option>
-                  <option value="drama">Drama</option>
-                  <option value="action">Action</option>
+                  <option value="Horror">Horror</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Thriller">Thriller</option>
+                  <option value="Western">Western</option>
+                  <option value="Comedy">Comedy</option>
+                  <option value="Drama">Drama</option>
+                  <option value="Action">Action</option>
                   <require />
                 </select>
               </label>
@@ -229,7 +197,7 @@ const Update = () => {
                 <input
                   type="text"
                   name="summary"
-                  defaultValue={summary}
+                  defaultValue={summary.slice(0,20)}
                   className="grow"
                   placeholder="Movie Title"
                 //   value={form.summary}

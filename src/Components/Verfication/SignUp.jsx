@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -144,13 +144,20 @@ const SignUp = () => {
           </div>
 
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-
           <button
             type="submit"
             className="w-full bg-blue-500 text-white font-bold py-2 rounded hover:bg-blue-600 focus:outline-none"
           >
             Sign Up
           </button>
+          <p className="mt-2 text-center ">
+                  You have already a account?
+                  <Link to={"/auth/signIn"}>
+                    <button className="text-purple-900 font-semibold text-base">
+                      Log-In
+                    </button>
+                  </Link>
+                </p>
         </form>
       </div>
     </div>

@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { Link, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import Footer from "./Footer";
+import RatingReview from "./Private route/Rating";
 
 const AllMovie = () => {
   const { user } = useContext(AuthContext);
@@ -27,9 +28,9 @@ const AllMovie = () => {
 
   //  const { _id,posterUrl, title, release, duration, genre, rating } = movies;
   return (
-    <div className=" bg-orange-200  dark:bg-gradient-to-br from-purple-900 via-black to-black">
+    <div className="  bg-gradient-to-br from-purple-900 via-black to-black   dark:bg-gradient-to-br dark:from-sky-300- dark:via-sky-300 dark:to-sky-300 dark:text-black">
       <Navbar></Navbar>
-      <div className="w-6/12 mx-auto p-3 ">
+      <div className="w-6/12 mx-auto p-1 ">
         <label className="input input-bordered flex items-center gap-2">
           <input
             onChange={(e) => setSearch(e.target.value)}
@@ -51,38 +52,50 @@ const AllMovie = () => {
           </svg>
         </label>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-2 w-10/12 mx-auto">
+      <div>
+      <div className="grid grid-cols-1  gap-2 lg:grid-cols-2 lg:gap-5 w-8/12 mx-auto">
         {Mov.map((movie) => (
-          <div className=" herobg-gradient-to-br from-purple-900 via-black to-black dark:text-white min-h-screen">
-            <div className="hero-content flex-col lg:flex-row">
-              <img
-                src={movie.posterUrl}
-                className="max-w-sm rounded-lg shadow-2xl"
-              />
+          <div>
+            <div className="  text-white rounded-2xl p-1 dark:bg-gradient-to-br dark:from-white dark:via-sky-300 dark:to-white dark:text-black ">
+            <div className="flex-col lg:flex-row w-10/12 mx-auto">
+            <img
+              src={movie.posterUrl}
+              className=" w-8/12 mx-auto rounded-lg shadow-2xl"
+            />
               <div>
-                <h1 className="text-5xl font-bold">{movie.title} </h1>
+                <h1 className="text-5xl text-center font-bold">{movie.title} </h1>
                 <div>
-                  {" "}
-                  <p className="text-xl ">
-                    {movie.genre} ({movie.release}){" "}
+                  <p className="text-xl  text-center">
+                    {movie.genre} ({movie.release})
                   </p>
+                  <p className="text-center">
+              <RatingReview rating={movie.rating}></RatingReview>
+            </p>
                 </div>
-                <p className="py-6">{movie.summary}</p>
+                <p className="py-2 text-center">{movie.summary.slice(0,100)}</p>
                 {user && user?.email ? (
-                  <Link to={`/addedMovie/${movie._id}`}>
-                    <button className="btn btn-primary">See Details</button>
+                  <div className="w-3/12 mx-auto" >
+                    <Link to={`/addedMovie/${movie._id}`}>
+                    <button className="btn btn-primary ">See Details</button>
                   </Link>
+                  </div>
                 ) : (
-                  <Link to={"/signIn"}>
-                    <button className="btn btn-primary">See Details</button>
+                    <div className="w-3/12 mx-auto">
+                         <Link to={"/signIn"}>
+                    <button className="btn btn-primary ">See Details</button>
                   </Link>
+                    </div>
                 )}
               </div>
             </div>
           </div>
+          </div>
         ))}
       </div>
+      </div>
+      <div className="text-white">
       <Footer></Footer>
+      </div>
     </div>
   );
 };

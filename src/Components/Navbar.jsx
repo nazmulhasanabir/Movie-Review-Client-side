@@ -11,7 +11,6 @@ const Navbar = () => {
     setDark(!dark);
     document.body.classList.toggle("dark");
   };
-
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -38,7 +37,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-red-300  text-black   dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white">
+      <div className="navbar  bg-gradient-to-br from-purple-900 via-black to-black  text-white  dark:bg-gradient-to-br dark:from-purple-300 dark:via-gray-100 dark:to-white dark:text-black">
         <div className="navbar-start">
           <div className="dropdown">
             <button
@@ -68,31 +67,31 @@ const Navbar = () => {
                 {user && user?.email ? (
                   <div>
                     <Link to={"/"}>
-                      <li className="btn mx-2">Home</li>
+                      <li className="btn bg-purple-200 mx-2">Home</li>
                     </Link>
                     <Link to={"/allMovie"}>
-                      <li className="btn mx-2">All Movies</li>
+                      <li className="btn bg-purple-200 mx-2">All Movies</li>
                     </Link>
                     <Link to={"/about"}>
-                      <li className="btn mx-2">About</li>
+                      <li className="btn bg-purple-200 mx-2">About</li>
                     </Link>
                     <Link to={"/addedMovie"}>
-                      <li className="btn mx-2">Add Movies</li>
+                      <li className="btn bg-purple-200 mx-2">Add Movies</li>
                     </Link>
-                    <Link to={`/favorite/${user.email}`}>
-                      <li className="btn mx-2">My Favorites</li>
+                    <Link to={`/favorite`}>
+                      <li className="btn bg-purple-200 mx-2">My Favorites</li>
                     </Link>
                   </div>
                 ) : (
                   <div>
                     <Link to={"/"}>
-                      <li className="btn mx-2">Home</li>
+                      <li className="btn bg-purple-200 mx-2">Home</li>
                     </Link>
                     <Link to={"/allMovie"}>
-                      <li className="btn mx-2">All Movies</li>
+                      <li className="btn bg-purple-200 mx-2">All Movies</li>
                     </Link>
                     <Link to={"/about"}>
-                      <li className="btn mx-2">About</li>
+                      <li className="btn bg-purple-200 mx-2">About</li>
                     </Link>
                   </div>
                 )}
@@ -115,48 +114,48 @@ const Navbar = () => {
           {user && user?.email ? (
             <div>
               <Link to={"/"}>
-                <li className="btn mx-2">Home</li>
+                <li className="btn bg-purple-200 mx-2">Home</li>
               </Link>
               <Link to={"/allMovie"}>
-                <li className="btn mx-2">All Movies</li>
+                <li className="btn bg-purple-200 mx-2">All Movies</li>
               </Link>
               <Link to={"/addedMovie"}>
-                <li className="btn mx-2">Add Movies</li>
+                <li className="btn bg-purple-200 mx-2">Add Movies</li>
               </Link>
               <Link to={`/favorite`}>
-                <li className="btn mx-2">My Favorites</li>
+                <li className="btn bg-purple-200 mx-2">My Favorites</li>
               </Link>
               <Link to={"/about"}>
-                <li className="btn mx-2">About</li>
+                <li className="btn bg-purple-200 mx-2">About</li>
               </Link>
             </div>
           ) : (
             <div>
               <Link to={"/"}>
-                <li className="btn mx-2">Home</li>
+                <li className="btn bg-purple-200 mx-2">Home</li>
               </Link>
               <Link to={"/allMovie"}>
-                <li className="btn mx-2">All Movies</li>
+                <li className="btn bg-purple-200 mx-2">All Movies</li>
               </Link>
               <Link to={"/about"}>
-                <li className="btn mx-2">About</li>
-              </Link>
+              </Link> 
+                <li className="btn bg-purple-200 mx-2">About</li>
             </div>
           )}
         </div>
 
         {/* Dark Mode and User Options */}
         <div className="navbar-end flex items-center gap-4">
-          <label className="grid cursor-pointer place-items-center">
+          {/* <label className="grid cursor-pointer place-items-center">
             <input
               onClick={darkModeHandler}
               type="checkbox"
               value="synthwave"
               className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
-            />
-            {dark ? "Dark Mode" : "Light Mode"}
+              />
+              {dark ? "Dark Mode" : "Light Mode"}
             <svg
-            // first
+              // first
               className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -172,7 +171,7 @@ const Navbar = () => {
               <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
             </svg>
             <svg
-            // second
+              // second
               className="stroke-base-100  fill-base-100 col-start-2 row-start-1"
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -186,12 +185,42 @@ const Navbar = () => {
             >
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
-          </label>
+          </label> */}
+  <label class="flex cursor-pointer gap-2">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+  <input type="checkbox"   onClick={darkModeHandler} value="synthwave" class="toggle theme-controller" />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5" />
+    <path
+      d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+  </svg>
+     
 
+</label>
           <div className="dropdown dropdown-end ">
-            <div tabIndex={0} role="" className=" relative m-1">
+            <div tabIndex={0} role="" className=" relative m-1 right-3">
               {user && user?.email ? (
-                <div className="group relative w-12 h-12">
+                <div className="group relative w-12 h-12 ">
                   <img className="w-12 h-12 rounded-full" src={user.photoURL} />
                   <div className="absolute right-0 top-14 hidden w-max px-2 py-1  text-sm text-white bg-gray-800 rounded-md group-hover:block">
                     {user.displayName}
@@ -205,7 +234,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-[url('https://i.pinimg.com/474x/70/76/74/707674868b11a1d4cdb92e681b37b279.jpg')] bg-cover rounded-box z-[10] w-36 p-2 shadow"
+              className="dropdown-content menu bg-[url('https://i.pinimg.com/474x/70/76/74/707674868b11a1d4cdb92e681b37b279.jpg')] bg-cover rounded-box  z-[10] w-56 p-1  shadow"
             >
               {user && user?.email ? (
                 <div className="flex items-center  flex-col">
@@ -214,10 +243,10 @@ const Navbar = () => {
                     src={user.photoURL}
                     alt=""
                   />
-                 <div className="text-xs text-center">
-                 <p className="text-white   lg:block">{user.displayName}</p>
-                 <p className="text-white   lg:block">{user.email}</p>
-                 </div>
+                  <div className="text-xs text-center">
+                    <p className="text-white   lg:block">{user.displayName}</p>
+                    <p className="text-white   lg:block">{user.email}</p>
+                  </div>
 
                   <button
                     onClick={handleLogout}

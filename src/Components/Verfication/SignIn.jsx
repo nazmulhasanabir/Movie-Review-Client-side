@@ -95,6 +95,7 @@ const SignIn = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card  bg-[url('https://i.ibb.co.com/wBq15Dg/system-bars-hero.png')] bg-cover w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleSignIn} className="card-body">
+        <h2 className="text-black text-4xl text-center">Sign-Up</h2>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

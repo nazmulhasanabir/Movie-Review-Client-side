@@ -3,6 +3,7 @@ import Navbar from "../Navbar";
 import {  useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Footer from "../Footer";
 
 const AddMovie = () => {
   const {user} = useContext(AuthContext)
@@ -57,6 +58,7 @@ const AddMovie = () => {
     }
    
     // form submit 
+
     const handleAddMovie = (event) => { 
       event.preventDefault();
       if(!validateForm()) {
@@ -72,7 +74,6 @@ const AddMovie = () => {
     const rating = form.rating.value;
     const email = user.email;
     const movie = {email,duration,posterUrl, rating, title, release, genre, summary };
-   
     // send data to server
     fetch("http://localhost:5000/addedMovie", {
       method: "POST",
@@ -99,7 +100,8 @@ const AddMovie = () => {
       });
   };
   return (
-    <div className="bg-orange-100 dark:bg-gradient-to-br from-purple-900 via-black to-black p-5">
+  <div className="bg-gradient-to-br from-purple-500 via-black to-purple-900 text-white">
+      <div className=" bg-gradient-to-br from-purple-900 via-black to-black  text-black  dark:bg-gradient-to-br dark:from-purple-300 dark:via-gray-100 dark:to-white dark:text-black p-5">
       <Navbar></Navbar>
  
       <form  onSubmit={handleAddMovie}>
@@ -188,13 +190,13 @@ const AddMovie = () => {
               value={form.genre}
               >
                 <option value="">Select</option>
-                <option value="horror">Horror</option>
-                <option value="horror">Romance</option>
-                <option value="horror">Thriller</option>
-                <option value="horror">Western</option>
-                <option value="comedy">Comedy</option>
-                <option value="drama">Drama</option>
-                <option value="action">Action</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Western">Western</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Action">Action</option>
                 <require />
               </select>
             </label>
@@ -238,6 +240,8 @@ const AddMovie = () => {
         </div>
       </form>
     </div>
+    <Footer></Footer>
+  </div>
   );
 };
 

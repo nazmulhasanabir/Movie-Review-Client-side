@@ -19,14 +19,14 @@ const Home = () => {
   const movies = useLoaderData();
   const sortMovie = [...movies].sort((a, b) => b.rating - a.rating).slice(0, 6);
   return (
-  <div className="bg-yellow-100 dark:bg-blue-900">
+  <div className="  bg-gradient-to-br from-purple-900 via-black to-black  text-white  dark:bg-gradient-to-br dark:from-purple-300 dark:via-gray-100 dark:to-white dark:text-black">
      
  
-      <div className=" bg-gray-200 text-black dark:bg-gradient-to-br from-purple-900 via-black to-black ">
+      <div className=" bg-gradient-to-br from-purple-900 via-black to-black  text-white  dark:bg-gradient-to-br dark:from-purple-300 dark:via-gray-100 dark:to-white dark:text-black">
       <Navbar></Navbar>
       <Slider></Slider>
-      <div className="  bg-gray-200  dark:bg-gradient-to-br from-purple-900 via-black to-black text-black">
-        <h2 className="text-7xl my-3 text-emerald-900 border-b-2 border-emerald-500 text-center">Upcoming Movie</h2>
+      <div className="  bg-gradient-to-br from-purple-900 via-black to-black mb-6 text-white  dark:bg-gradient-to-br dark:from-purple-300 dark:via-gray-100 dark:to-white dark:text-black">
+        <h2 className="text-3xl lg:text-7xl font-bold my-3 dark:text-black  text-center">Upcoming Movie</h2>
       <Marquee>
         <MarqueeDetails></MarqueeDetails>
         <Marquee2></Marquee2>
@@ -37,11 +37,11 @@ const Home = () => {
         <Marquee5></Marquee5>
       </Marquee>
     </div>
-      <div className="w-10/12 mx-auto rounded-xl my-4 bg-red-300 p-2  dark:bg-gradient-to-br from-purple-900 via-black to-black dark:text-white">
+      <div className="w-10/12  mx-auto rounded-xl my-4 dark:bg-gray-100 ">
         <div className="flex justify-between">
           <h2 className="text-lg font-semibold ">Popular Movies</h2>
           <Link to={"/allMovie"}>
-            <button className="btn">All Movies {">"}</button>
+            <button className="btn bg-red-600 text-white">All Movies {">"}</button>
           </Link>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 ">
