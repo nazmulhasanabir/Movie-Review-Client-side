@@ -10,12 +10,11 @@ const AllMovie = () => {
   const navigate = useNavigate();
   const movies = useLoaderData();
   const [Mov, setMov] = useState(movies);
-
   const [search, setSearch] = useState("");
 
   
     useEffect(() => {
-    fetch(`http://localhost:5000/addedMovie?searchParams=${search}`)
+    fetch(`https://assignment-server-side-eight.vercel.app/addedMovie?searchParams=${search}`)
       .then((res) => res.json())
       .then(
         (data) => {
@@ -72,7 +71,7 @@ const AllMovie = () => {
               <RatingReview rating={movie.rating}></RatingReview>
             </p>
                 </div>
-                <p className="py-2 text-center">{movie.summary.slice(0,100)}</p>
+                <p className="py-2 text-center">{movie.summary}</p>
                 {user && user?.email ? (
                   <div className="w-3/12 mx-auto" >
                     <Link to={`/addedMovie/${movie._id}`}>
@@ -81,7 +80,7 @@ const AllMovie = () => {
                   </div>
                 ) : (
                     <div className="w-3/12 mx-auto">
-                         <Link to={"/signIn"}>
+                         <Link to={"/auth/signIn"}>
                     <button className="btn btn-primary ">See Details</button>
                   </Link>
                     </div>

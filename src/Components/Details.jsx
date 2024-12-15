@@ -27,7 +27,7 @@ const Details = () => {
     rating,
     summary
   ) => {
-    fetch("http://localhost:5000/favorite", {
+    fetch("https://assignment-server-side-eight.vercel.app/favorite", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const Details = () => {
   };
 
   const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/addedMovie/${_id}`, {
+    fetch(`https://assignment-server-side-eight.vercel.app/addedMovie/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -80,13 +80,14 @@ const Details = () => {
           });
           const remaining = delMov.filter((movie) => movie._id !== _id);
           setDelMov(remaining);
+          navigate("/allMovie")
         }
       });
   };
 
   return (
-    <div>
-      <div className="bg-gradient-to-br from-purple-900 via-black to-pink-900  text-white dark:bg-gradient-to-br dark:from-white dark:via-purple-300 dark:to-white dark:text-black">
+    <>
+      <div className="h-screen bg-gradient-to-br from-purple-900 via-black to-pink-900  text-white dark:bg-gradient-to-br dark:from-white dark:via-purple-300 dark:to-white dark:text-black">
         <Navbar />
         <div className="w-10/12 mx-auto card dark:bg-purple-300 shadow-xl">
           {delMov.map((movie) => (
@@ -161,7 +162,7 @@ const Details = () => {
       <div className="bg-gradient-to-br from-purple-900 via-black to-black  text-white">
         <Footer></Footer>
       </div>
-    </div>
+    </>
   );
 };
 

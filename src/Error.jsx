@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from './Components/Navbar';
 
 const Error = () => {
     return (
         <div>
+            <Navbar></Navbar>
              <div>
         <main className="h-screen  w-5/6 lg:w-5/12 mx-auto ">
           <p className=" text-2xl lg:text-5xl text-center ">404!</p>

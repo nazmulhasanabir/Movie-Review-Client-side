@@ -32,7 +32,7 @@ const SignUp = () => {
         photoURL,
       });
       const newUser = { name, email, photoURL };
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("https://assignment-server-side-eight.vercel.app/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
@@ -76,7 +76,7 @@ const SignUp = () => {
       };
 
       // Save Google user to database
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("https://assignment-server-side-eight.vercel.app/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),

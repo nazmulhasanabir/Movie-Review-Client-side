@@ -5,27 +5,35 @@ import image4 from "../src/assets/Poster image/664fb36db5d95bb35a826328038d98c8.
 import image5 from "../src/assets/Poster image/8cd9f2bdece7ada794937fd9cd960c6a.jpg";
 import image6 from "../src/assets/Poster image/e85a31925858acec5fc35708433501e5.jpg";
 // Import Swiper React components
+
+// import Swiper core and required modules
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-// import required modules
-import { Pagination } from "swiper/modules";
-
+import "swiper/css/scrollbar";
 const Slider = () => {
   return (
     <div className="p-20  rounded-xl mb-6 dark:bg-gradient-to-br dark:from-purple-900 dark:via-white dark:to-purple-900 dark:text-black">
       <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
+          spaceBetween={30}
+          centeredSlides={true}
+          slidesPerView={3}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={false}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
         <SwiperSlide>
           <img src={image1} />
         </SwiperSlide>

@@ -12,7 +12,7 @@ const Fvrt = () => {
   // const email = user.email;
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/favorite/${user.email}`)
+      fetch(`https://assignment-server-side-eight.vercel.app/favorite/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           const fvrt = data.filter((movie) => movie.email === user?.email);
@@ -26,7 +26,7 @@ const Fvrt = () => {
     }
   }, [user]);
   const handleDelete = (email, _id) => {
-    fetch(`http://localhost:5000/favorite/${email}`, {
+    fetch(`https://assignment-server-side-eight.vercel.app/favorite/${email}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -45,7 +45,8 @@ const Fvrt = () => {
       });
   };
   return (
-    <div className="bg-gradient-to-br  from-purple-900 via-black to-black text-black dark:bg-gradient-to-br  dark:from-purple-200 dark:via-white dark:to-black dark:text-black">
+    <>
+    <div className=" bg-gradient-to-br  from-purple-900 via-black to-black text-black dark:bg-gradient-to-br  dark:from-purple-200 dark:via-white dark:to-black dark:text-black">
       <Navbar />
       <h1 className="text-center text-3xl font-bold my-4 text-white dark:text-black ">Favorite Movies</h1>
       <div className="w-10/12 mx-auto gap-4 grid grid-cols-1 lg:grid-cols-3">
@@ -72,10 +73,11 @@ const Fvrt = () => {
          
         ))}
       </div>
-      <div className="text-white">
+    </div>
+      <div className="text-white bg-gradient-to-br  from-purple-900 via-black to-black  dark:bg-gradient-to-br  dark:from-purple-200 dark:via-white dark:to-black dark:text-black">
         <Footer></Footer>
       </div>
-    </div>
+    </>
   );
 };
 

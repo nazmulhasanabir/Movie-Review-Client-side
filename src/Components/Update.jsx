@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Swal from "sweetalert2";
+import { AuthContext } from "./Provider/AuthProvider";
 
 const Update = () => {
   const movie = useLoaderData();
+  const {user} = useContext(AuthContext)
   const { _id, posterUrl, title, release, duration, genre, rating, summary } =
     movie;
   const navigate = useNavigate();
@@ -51,7 +53,7 @@ const Update = () => {
     };
     
     // send data to server
-    fetch(`http://localhost:5000/updateMovie/${_id}`, {
+    fetch(`https://assignment-server-side-eight.vercel.app/updateMovie/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
-    loader: () => fetch("http://localhost:5000/addedMovie"),
+    loader: () => fetch("https://assignment-server-side-eight.vercel.app/addedMovie"),
   },
     
   ,{
@@ -37,20 +37,20 @@ const router = createBrowserRouter([
     path: "/addedMovie/:id",
     element:(<PrivateRoutes> <Details></Details></PrivateRoutes>),
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/addedMovie/${params.id}`),
+      fetch(`https://assignment-server-side-eight.vercel.app/addedMovie/${params.id}`),
   },
   {
     path: "/updateMovie/:id",
     element:<PrivateRoutes><Update></Update></PrivateRoutes>,  
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/addedMovie/${params.id}`)
+      fetch(`https://assignment-server-side-eight.vercel.app/addedMovie/${params.id}`)
         .then((res) => res.json())
         .catch((error) => console.error("Error fetching movie:", error)),
   },
   {
     path: "/allMovie",
     element: <AllMovie></AllMovie>,
-    loader: () => fetch("http://localhost:5000/addedMovie"),
+    loader: () => fetch("https://assignment-server-side-eight.vercel.app/addedMovie"),
   },
   {
     path: "/addedMovie",
@@ -67,7 +67,10 @@ const router = createBrowserRouter([
         path: "signUp",
         element: <SignUp></SignUp>,
       },
-
+      {
+        path:"reset",
+        element:<Reset></Reset>
+      },
     ]
   },
   
@@ -76,13 +79,9 @@ const router = createBrowserRouter([
     element: <About></About>,
   },
   {
-    path:"/reset",
-    element:<Reset></Reset>
-  },
-  {
     path: "users",
     element: <Users></Users>,
-    loader: () => fetch("http://localhost:5000/users"),
+    loader: () => fetch("https://assignment-server-side-eight.vercel.app/users"),
   },
   {
     path: "*",

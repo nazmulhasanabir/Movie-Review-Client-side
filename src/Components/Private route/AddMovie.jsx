@@ -75,7 +75,7 @@ const AddMovie = () => {
     const email = user.email;
     const movie = {email,duration,posterUrl, rating, title, release, genre, summary };
     // send data to server
-    fetch("http://localhost:5000/addedMovie", {
+    fetch("https://assignment-server-side-eight.vercel.app/addedMovie", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -93,7 +93,7 @@ const AddMovie = () => {
             confirmButtonText: "Success!",
           }).then((result) => {
             if (result.isConfirmed) {
-              navigate("/allMovie");
+              navigate("/");
             }
           });
         }

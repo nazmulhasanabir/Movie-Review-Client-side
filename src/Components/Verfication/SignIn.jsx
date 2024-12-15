@@ -45,7 +45,7 @@ const SignIn = () => {
       };
 
       // Save Google user to database
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("https://assignment-server-side-eight.vercel.app/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
@@ -103,7 +103,7 @@ const SignIn = () => {
                   required
                 />
                 <label className="label">
-                <a href={"/reset"} className="label-text-alt link link-hover">
+                <a href={"/auth/reset"} className="label-text-alt link link-hover">
                 Forgot password?
               </a>
                 </label>
