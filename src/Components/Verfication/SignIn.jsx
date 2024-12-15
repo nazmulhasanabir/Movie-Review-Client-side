@@ -30,23 +30,6 @@ const SignIn = () => {
       });
   };
 
-  // const handleGoogle = () => {
-  //   const provider = new GoogleAuthProvider();
-  //   signInWithPopup(auth, provider)
-  //     .then((result) => {
-  //       console.log("Google sign-in successful:", result.user);
-  //       navigate("/");
-  //     })
-  //     .catch((error) => {
-  //       console.error("Google sign-in error:", error.message);
-  //       Swal.fire({
-  //         title: "Error!",
-  //         text: "Google sign-in failed. Please try again.",
-  //         icon: "error",
-  //         confirmButtonText: "OK",
-  //       });
-  //     });
-  // };
   const handleGoogle = async () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -95,7 +78,7 @@ const SignIn = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card  bg-[url('https://i.ibb.co.com/wBq15Dg/system-bars-hero.png')] bg-cover w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleSignIn} className="card-body">
-        <h2 className="text-black text-4xl text-center">Sign-Up</h2>
+        <h2 className="text-black text-4xl text-center">Sign- In</h2>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

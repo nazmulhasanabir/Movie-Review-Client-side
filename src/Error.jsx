@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NotWork = () => {
-  return (
-    <div>
-      <div>
+const Error = () => {
+    return (
+        <div>
+             <div>
         <main className="h-screen  w-5/6 lg:w-5/12 mx-auto ">
           <p className=" text-2xl lg:text-5xl text-center ">404!</p>
           <h2 className="text-2xl lg:text-5xl text-center font-bold my-10">
@@ -18,8 +19,8 @@ const NotWork = () => {
           </p>
         </main>
       </div>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default NotWork;
+export default Error;

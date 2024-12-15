@@ -17,8 +17,8 @@ import PrivateRoutes from "./Components/Private route/PrivateRoute";
 import Fvrt from "./Fvrt";
 import Reset from "./Components/Reset";
 import Auth from "./Auth";
-import NotWork from "./Components/Verfication/NotWork/NotWork";
 import Update from "./Components/Update";
+import Error from "./Error";
 
 const router = createBrowserRouter([
   {
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element:<NotWork></NotWork>
+    element:<Error></Error>
   },
 ]);
 
