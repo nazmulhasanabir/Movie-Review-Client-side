@@ -1,13 +1,10 @@
 # Creating the README.md file for MovieNest
-
-movie_nest_readme = """\
 # 🎬 MovieNest
 
 MovieNest is a modern movie portal designed to provide a seamless experience for movie enthusiasts. Users can explore, add, and manage their movie collection with an intuitive and visually stunning interface.
 
-![MovieNest](https://i.ibb.co.com/jk3wHxTp/image.png)  
+![MovieNest](https://i.ibb.co.com/jk3wHxTp/image.png)
 
-## 🌐 Live Demo  
 🔗 **Live Site:** [Mountain Treks](https://assighnment-10.web.app/)
 ---
 
