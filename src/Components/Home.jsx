@@ -13,9 +13,6 @@ import Marquee5 from "./Marquee/Marquee5";
 import Marquee4 from "./Marquee/Marquee4";
 const Home = () => {
   const [dark, setDark] = React.useState(false);
-
-
-
   const movies = useLoaderData();
   const sortMovie = [...movies].sort((a, b) => b.rating - a.rating).slice(0, 6);
   return (

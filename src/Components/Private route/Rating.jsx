@@ -1,4 +1,3 @@
-// src/components/RatingReview.js
 
 import React from 'react'
 

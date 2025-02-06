@@ -4,6 +4,7 @@ import { AuthContext } from "./Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
 import Footer from "./Components/Footer";
 import RatingReview from "./Components/Private route/Rating";
+import axios from "axios";
 
 const Fvrt = () => {
   const { user } = useContext(AuthContext);
@@ -12,17 +13,26 @@ const Fvrt = () => {
   // const email = user.email;
   useEffect(() => {
     if (user) {
-      fetch(`https://assignment-server-side-eight.vercel.app/favorite/${user.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          const fvrt = data.filter((movie) => movie.email === user?.email);
-          setFavorites(fvrt);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.error("Error fetching favorite movies:", err);
-          setLoading(false);
-        });
+      // fetch(`https://assignment-server-side-eight.vercel.app/favorite/${user.email}`)
+      //   .then((res) => res.json())
+      //   .then((data) =>
+      //      {const fvrt = data.filter((movie) => movie.email === user?.email);
+      //     setFavorites(fvrt);
+      //     setLoading(false)})
+      //   .catch((err) => {
+      //     console.error("Error fetching favorite movies:", err);
+      //     setLoading(false);
+      //   });
+      axios.get(`https://assignment-server-side-eight.vercel.app/favorite/${user.email}`)
+      .then((res) =>  {
+        const fvrt = res.data.filter((movie) => movie.email === user.email)
+        setFavorites(fvrt)
+        setLoading(false)
+      .catch((err)=> {
+        console.log("Error fetching favorite movies:", err);
+        setLoading(false)
+      })
+      })
     }
   }, [user]);
   const handleDelete = (email, _id) => {

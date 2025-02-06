@@ -78,7 +78,7 @@ const Details = () => {
             icon: "success",
             confirmButtonText: "OK",
           });
-          const remaining = delMov.filter((movie) => movie._id !== _id);
+          const remaining = delsMov.filter((movie) => movie._id !== _id);
           setDelMov(remaining);
           navigate("/allMovie")
         }
