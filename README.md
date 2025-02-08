@@ -6,7 +6,7 @@ MovieNest is a modern movie portal designed to provide a seamless experience for
 ![MovieNest](https://i.ibb.co.com/jk3wHxTp/image.png)
 
 ##
-🔗 **Live Site:** [Mountain Treks](https://assighnment-10.web.app/)
+🔗 **Live Site:** [MovieNest](https://assighnment-10.web.app/)
 ---
 
 ## 📌 Table of Contents
