@@ -110,7 +110,7 @@ The app should now be running at `http://localhost:3000/`
 
 ---
 
-## 📖 Usage
+## 📖  Usage Guide for MovieNest
 
 1. **Homepage:**  
    - Displays a banner slider and adventure cards.  
@@ -122,9 +122,22 @@ The app should now be running at `http://localhost:3000/`
    - **Register:** New users sign up with email/password, validated against specific criteria.  
    - **Forgot Password:** Users reset their passwords via email.  
 
-3. **Adventure Details Page:**  
-   - Displays adventure details dynamically based on the selected experience.  
-   - Includes a "Talk with Expert" button for consultation via Google Meet.  
+3. **Movie Exploration:**  
+-Browse all movies in a responsive grid layout.
+-Each movie card displays poster, title, genre, and rating.
+-Click on a movie card to view detailed information.
 
-4. **Private Routes:**  
-   - Users need to be logged in to access adventure details and profile pages.  
+4. **Adding & Managing Movies:**  
+  -Logged-in users can add movies with title, genre, rating, and duration.
+  -Edit or delete movie entries from the list..
+
+5   **Favorite List**
+-Users can save movies to a personalized Favorites list.
+-Easily access and remove movies from the list.
+6️ **Authentication & User Management**
+-Secure login & registration using Firebase Authentication.
+-Users can manage their collections after logging in.
+-Authentication persists across sessions for seamless access.
+7️ **Responsive UI & Smooth Experience**
+-Optimized for all devices with TailwindCSS.
+-Animations & alerts for a visually engaging experience.
